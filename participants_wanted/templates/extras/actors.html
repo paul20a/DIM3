@@ -1,0 +1,25 @@
+{% extends 'extras/template.html' %}
+    <head>
+        <title>Actors</title>
+    </head>
+{% block body_block %}
+
+	  <h3>Actors</h3>
+
+	  {% if actors %}
+	  <ul class="latest">
+		{% for actor in actors %}
+		    <li> 
+			<img src="{{ STATIC_PATH }}/{{ actor.picture }}" alt="Actor thumbnail" />
+			<a href="/extras/actor/{{ actor.url }}">{{ actor.user.get_full_name }}
+					
+		</a></li>
+		{% endfor %}
+   	</ul>
+	 {% else %}
+	  There are no actors present.
+	  {% endif %}
+
+	  <br /><br />
+{% endblock %}
+

@@ -1,0 +1,27 @@
+{% extends 'extras/template.html' %}
+    <head>
+        <title>Jobs</title>
+    </head>
+{% block body_block %}
+
+	  <h3>Jobs</h3>
+
+	  {% if roles %}
+	  <ul class ="latest">
+		{% for role in roles %}
+		    <li>
+                            <a href="/extras/production/{{ role.production.url }}/role/{{ role.url }}">
+                                <img src="{{ STATIC_PATH }}/{{ role.picture }}" alt="Role thumbnail" />
+                                <span class="title">{{ role.name }}</span>
+                                <span class="date">{{ role.production.closingDate }}</span>
+                            </a>
+                        </li>
+		{% endfor %}
+   	</ul>
+	 {% else %}
+	  There are no jobs present.
+	  {% endif %}
+
+	  <br /><br />
+
+{% endblock %}

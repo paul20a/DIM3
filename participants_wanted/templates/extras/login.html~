@@ -1,0 +1,36 @@
+{% extends 'extras/template.html' %}
+    <head>
+        <!-- Is anyone getting tired of repeatedly entering the header over and over?? -->
+        <title>Extras</title>
+    </head>
+
+{% block body_block %}
+
+    <table width="500">
+	<tr>
+	<td><a href="/extras/">Home</a><br /></td>
+	<td><a href="/extras/jobs/">Jobs</a><br /></td>
+	<td><a href="/extras/actors/">Actors</a><br /></td>
+	{% if user.is_authenticated %}
+	<td><a href="/extras/logout/">Logout</a><br /></td>
+	{% else %}
+	<td><a href="/extras/register/">Register Here</a><br /></td>
+	<td><a href="/extras/login/">Login</a><br /></td>
+	{% endif %}
+	<td><a href="/extras/about/">About</a><br /></td>
+	</tr>
+	</table>
+
+	<hr />
+        <h1>Login to Extras</h1>
+
+        <form id="login_form" method="post" action="/extras/login/">
+            {% csrf_token %}
+            Username: <input type="text" name="username" value="" size="50" />
+            <br />
+            Password: <input type="password" name="password" value="" size="50" />
+            <br />
+
+            <input type="submit" value="submit" />
+        </form>
+{% endblock %}

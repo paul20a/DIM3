@@ -1,0 +1,38 @@
+{% extends 'extras/template.html' %}
+    <head>
+        <title>Actors</title>
+    </head>
+{% block body_block %}
+
+	  
+	  <table width="500">
+		<tr>
+		  <td><a href="/extras/">Home</a><br /></td>
+		  <td><a href="/extras/jobs/">Jobs</a><br /></td>
+		  <td><a href="/extras/actors/">Actors</a><br /></td>
+		  {% if user.is_authenticated %}
+		  <td><a href="/extras/logout/">Logout</a><br /></td>
+		  {% else %}
+		  <td><a href="/extras/register/">Register Here</a><br /></td>
+		  <td><a href="/extras/login/">Login</a><br /></td>
+		  {% endif %}
+		  <td><a href="/extras/about/">About</a><br /></td>
+		</tr>
+	  </table>
+	  <hr /> 
+
+	  <h3>Actors</h3>
+
+	  {% if actors %}
+	  <ul>
+		{% for actor in actors %}
+		<li><a href="{{ actor.url }}">{{ actor.user.name }}</a></li>
+		{% endfor %}
+   	</ul>
+	 {% else %}
+	  There are no actors present.
+	  {% endif %}
+
+	  <br /><br />
+{% endblock %}
+

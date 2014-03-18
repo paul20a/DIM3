@@ -1,0 +1,66 @@
+{% extends 'extras/template.html' %}
+
+{% block body_block %}
+        <h1>View Role</h1>
+
+        {% if role %}
+        <h2>Details</h2>
+        <ul>
+            <li> <span>Name: {{ role.name }} </span></li>
+            <li> <span>Type: {{ role.roleType }} </span></li>
+            <li> <span>Gender: {{ role.gender }} </span></li>
+            <li> <span>Description: {{ role.description }} </span></li>
+        </ul>
+        {% endif %}
+
+	{% if actorDetails %}
+
+	<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-show="true">
+  Apply for Role
+	</button>
+
+	<!-- Modal -->
+	<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		<h4 class="modal-title" id="myModalLabel">Apply for Role</h4>
+	      </div>
+	      <div class="modal-body">
+
+              <h2 align="center">Your Details</h2>
+              <ul class="profinfo2">
+                  {% for actor in actorDetails %}
+                    <li><span>First Name:  {{ actor.user.first_name }}</span></li>
+                    <li> <span>Surname:  {{ actor.user.last_name }}</span></li>
+                    <li> <span>E-mail:  {{ actor.user.email }} </span></li>
+                    <li> <span>Country:  {{ actor.country }} </span></li>
+                    <li> <span>Date of Birth:  {{ actor.dateOfBirth }} </span></li>
+                    <li> <span>Weight:  {{ actor.weight }} </span></li>
+                    <li> <span>Height:  {{ actor.height }} </span></li>
+                    <li> <span>Hair Colour:  {{ actor.hairColour }} </span></li>
+                    <li> <span>Eye Colour:  {{ actor.eyeColour }} </span></li>
+                    <li> <span>Gender:  {{ actor.gender }} </span></li>
+                    <li> <span>Rating:  {{ actor.rating }} </span></li>
+                 {% endfor %}
+             </ul>
+
+	      </div>
+	      <div class="modal-footer">
+		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		<button type="button" class="btn btn-primary">Make Application</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+    {% endif %}
+
+    <h2>Production</h2>
+        {% if not production_name_url %}
+            <div style="color: red;">The specified production does not exist!</div>
+        {% else %}
+           <a href="/extras/production/{{ production_name_url }}">{{production.url}}{{ production.title }}</a>
+        {% endif %}
+{% endblock %}

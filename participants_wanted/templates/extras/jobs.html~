@@ -1,0 +1,21 @@
+{% extends 'extras/template.html' %}
+    <head>
+        <title>Jobs</title>
+    </head>
+{% block body_block %}
+
+	  <h3>Jobs</h3>
+
+	  {% if roles %}
+	  <ul>
+		{% for role in roles %}
+		<li><a href="{{ role.url }}">{{ role.name }}</a></li>
+		{% endfor %}
+   	</ul>
+	 {% else %}
+	  There are no jobs present.
+	  {% endif %}
+
+	  <br /><br />
+
+{% endblock %}

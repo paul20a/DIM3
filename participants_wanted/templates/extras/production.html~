@@ -1,0 +1,24 @@
+{% extends 'extras/template.html' %}
+    <head>
+        <title>Extras</title>
+    </head>
+
+    <{% block body_block %}>
+        <h1>{{ production_name }}</h1>
+
+        {% if production %}
+            {% if roles %}
+            <ul>
+                {% for role in roles %}
+			{{role.url}}
+                <li><a href="/extras/production/{{ production_name_url }}/role/{{ role.url }}">{{production.url}}{{ role.name }}</a></li>
+                {% endfor %}
+            </ul>
+            {% else %}
+                <strong>No roles currently in production.</strong>
+            {% endif %}
+ 	<a href=" /extras/production/{{ production_name_url }}/add_role/">add role</a>
+        {% else %}
+            The specified production {{ production_name }} does not exist!
+        {% endif %}
+{% endblock %}

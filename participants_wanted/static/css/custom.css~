@@ -1,0 +1,287 @@
+.top-navbar-container {
+	height: 72px;
+	width: 100%;
+	background: #2b3e50;
+}
+
+div.container{
+	background: #2b3e50;
+}
+
+div.navbar.navbar-default.navbar-fixed-top{
+	background: #2b3e50;
+}
+
+.user-navbar-block {
+height: 189px;
+	float: right;
+	text-align: right;
+	height: 100%;
+	line-height: 72px;
+}
+
+.top-navbar-container a img {
+	margin-top: 3px;
+	background: #2b3e50
+}
+
+div.navbar-collapse{
+	padding-top: 40px;
+}
+
+.extras-navbar {
+	font-size: 13pt;
+	background: #2b3e50
+	
+}
+
+.container-main {
+	margin-top: 120px;
+	background: #2b3e50;
+    padding-top: 45px;
+}
+
+div.left-header {
+	margin: 10px 0;
+	font-size: 16pt;
+	font-weight: bold;
+
+}
+
+div.left-header h1 {
+	margin: 0;
+	padding: 8px 0 0px;
+}
+
+div.left-reel {
+	margin-bottom: 10px;
+	padding: 10px 0 10px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+	background: black url('pattern.png') repeat-y;
+}
+
+ul.profinfo{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul.profinfo li{
+	margin: 0px 0 10px;
+	position: relative;
+}
+
+ul.latest li img.bg {
+	margin-left: 35px;
+	width: 80px;
+	height: 80px;
+	background: black no-repeat;
+}
+
+ul.profinfo li span.detail {
+	font-weight: bold;
+	font-size: 12pt;
+	position: absolute;
+	top: 0;
+	left: 160px;
+}
+
+ul.profinfo li span.next {
+	font-size: 8pt;
+	position: absolute;
+	bottom: 0;
+	right: 10px;
+}
+
+ul.profinfo li:last-child {
+	margin: 0;
+}
+
+ul.profinfo li img {
+	margin-left: 35px;
+	width: 80px;
+	height: 80px;
+	background: url('placeholder.jpg') no-repeat;
+}
+
+ul.profinfo li span {
+
+	font-weight: bold;
+	font-size: 10pt;
+	position: absolute;
+	top: 0;
+	left: 160px;
+}
+
+
+
+ul.profinfo2 {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	padding-left: 160px;
+}
+
+
+
+ul.latest {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul.latest li {
+	margin: 0px 0 10px;
+	position: relative;
+}
+
+ul.latest li:last-child {
+	margin: 0;
+}
+
+
+/* Film reel hyperlinks - can change colours? */
+ul.latest li a {
+	display: block;
+	color: white;
+}
+
+	ul.latest li a:hover {
+		color: red;
+	}
+
+ul.latest li img {
+	margin-left: 35px;
+	width: 80px;
+	height: 80px;
+	background: url('placeholder.jpg') no-repeat;
+}
+
+ul.latest li span.title {
+	font-weight: bold;
+	font-size: 14pt;
+	position: absolute;
+	top: 0;
+	left: 160px;
+	text-decoration: underline;
+}
+
+ul.latest li span.date {
+	position: absolute;
+	bottom: 0;
+	right: 10px;
+}
+
+ul.extras-navbar li {
+	margin-right: 10px;
+}
+
+ul.filtered {
+	margin: 0;
+	padding: 0;
+	padding-top: 1px; /** ????? */
+	list-style-type: none;
+	margin-bottom: 10px;
+}
+
+ul.filtered li {
+	display: block;
+	background: url('cinema-placeholder.jpg') no-repeat;
+	margin-top: 10px;
+	height: 260px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+ul.filtered li h1 {
+	position: relative;
+	top: 20px;
+	left: 15px;
+	padding: 5px;
+	font-size: 22pt;
+	font-weight: bold;
+	background: #ebebeb;
+	display: inline;
+	color: black;
+	text-decoration: underline;
+}
+
+ul.filtered li span.clapper {
+	background: url('snapper-board.png') no-repeat;
+	display: block;
+	float: right;
+	margin-top: 45px;
+	margin-right: 25px;
+	width: 188px;
+	height: 189px;
+}
+
+ul.filtered li span.clapper span.day-month {
+	display: block;
+	font-size: 20pt;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 95px;
+}
+
+ul.filtered li span.clapper span.year {
+	display: block;
+	font-size: 24pt;
+	font-weight: bold;
+	text-align: center;
+}
+
+ul.filtered li a {
+	display: block;
+	height: 100%;
+}
+
+button.filter-btn {
+	font-size: 15pt;
+	font-weight: bold;
+}
+
+.form-horizontal .control-label{
+	margin-top: 0;
+  	margin-bottom: 0;
+  	padding-top: 9px;
+	font-size: 16pt;
+}
+
+
+
+
+.rating {
+    overflow: hidden;
+    display: inline-block;
+    font-size: 0;
+    position: relative;
+	padding-bottom: 0;
+	margin-left: 10px;
+}
+.rating-input {
+    float: right;
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    margin: 0 0 0 -16px;
+    opacity: 0;
+}
+.rating:hover .rating-star:hover,
+.rating:hover .rating-star:hover ~ .rating-star,
+.rating-input:checked ~ .rating-star {
+    background-position: 0 0;
+}
+.rating-star,
+.rating:hover .rating-star {
+    position: relative;
+    float: right;
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: url('http://kubyshkin.ru/samples/star-rating/star.png') 0 -16px;
+}
+

@@ -1,0 +1,28 @@
+{% extends 'extras/template.html' %}
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>About</title>
+    </head>
+
+{% block body_block %}
+
+    <table width="500">
+	<tr>
+	<td><a href="/extras/">Home</a><br /></td>
+	<td><a href="/extras/jobs/">Jobs</a><br /></td>
+	<td><a href="/extras/actors/">Actors</a><br /></td>
+	{% if user.is_authenticated %}
+	<td><a href="/extras/logout/">Logout</a><br /></td>
+	{% else %}
+	<td><a href="/extras/register/">Register Here</a><br /></td>
+	<td><a href="/extras/login/">Login</a><br /></td>
+	{% endif %}
+	<td><a href="/extras/about/">About</a><br /></td>
+	</tr>
+	</table>
+	<hr /> 
+        <h1>About</h1>
+        <strong>{{ boldmessage }}</strong><br />
+{% endblock %}

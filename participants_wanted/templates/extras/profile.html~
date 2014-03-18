@@ -1,0 +1,221 @@
+{% load static %}
+<!DOCTYPE html>
+
+<!-- Template -->
+
+<html>
+
+	<head>
+		<link href="{% static 'css/bootswatch.css' %}" rel="stylesheet">
+		<link href="{% static 'css/custom.css' %}" rel="stylesheet">
+		<link href="{% static 'css/ui-lightness/jquery-ui-1.10.4.custom.css' %}" rel="stylesheet">
+
+		<script src="{% static 'js/jquery-1.10.2.js' %}"></script>
+    		<script src="{% static 'js/jquery-ui-1.10.4.custom.js' %}"></script>
+        <title>My Profile</title>
+
+    	<script>
+		 $(function() {		
+			$( "#dialog" ).dialog({
+				autoOpen: false,
+				width: 400,
+				buttons: [
+					{
+						text: "Register as Actor",
+						click: function() {
+							window.location = "/extras/actor_register";
+						}
+					},
+					{
+						text: "Register as Director",
+						click: function(e) {
+							window.location = "/extras/director_register";
+						}
+					}
+				]
+			}); 
+
+			// Link to open the dialog
+			$( "#dialog-link" ).click(function( event ) {
+				$( "#dialog" ).dialog( "open" );
+				event.preventDefault();
+			});
+
+		
+		});
+		</script>	
+		<style>
+	
+		#dialog-link {
+			padding: .4em 1em .4em 20px;
+			text-decoration: none;
+			position: relative;
+		}
+	
+	
+		</style>
+	</head>
+
+    <body>
+
+	  	
+		<div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+		<div class="top-navbar-container">
+			<a href="/extras"><img src="{% static 'logo.png' %}" alt="Logo here!!!" /></a>
+			
+			<div class="user-navbar-block col-lg-4" style="padding-right: 0;" data-toggle="collapse">
+
+				{% if user.is_authenticated %}
+				<a type="button" class="btn btn-primary" href="/extras/logout/"><strong>Logout</strong</a>
+				<a href="/extras/profile/" type="button" class="btn btn-primary"><strong>My Profile</strong></a>
+				{% else %}
+				<a type="button" class="btn btn-primary" href="/extras/login/"><strong>Login</strong</a>
+				<a href="#" id="dialog-link" type="button" class="btn btn-primary"><strong>Register Here</strong></a>
+				{% endif %}
+
+				
+			</div>
+		</div>
+
+        <div class="navbar-header">
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav extras-navbar">
+            <li><a href="/extras/">Home</a></li>
+            <li><a href="/extras/actors/">Actors</a></li>
+            <li class="dropdown"><a href="/extras/jobs/">Jobs</a></li>
+	    {% if user.is_authenticated %}
+            <li class="dropdown"><a href="/extras/about/">About</a></li>
+	    {% endif %}
+          </ul>
+
+<form class="navbar-form navbar-right">
+                    <input type="text" class="form-control col-lg-8" placeholder="Search">
+                  </form>
+
+        </div>
+      </div>
+    </div>
+
+	<div class="container container-main">
+	 {% block body_block %} 
+
+	 <div class="row">
+
+       	<div class="col-md-4">
+
+      
+	 	<div class="left-header"><h1>Welcome, {{ user.username }}!</h1></div>
+
+        {% if actorDetails %}
+            {% for actor in actorDetails %}
+                <ul type="none">
+                <font size="4">
+                    <li><span>First Name: &nbsp; {{ actor.user.first_name }}</span></li>
+                    <li> <span>Surname: &nbsp; {{ actor.user.last_name }}</span></li>
+                    <li> <span>E-mail: &nbsp; {{ actor.user.email }} </span></li>
+                    <li> <span>Country: &nbsp; {{ actor.country }} </span></li>
+                    <li> <span>Date of Birth: &nbsp; {{ actor.dateOfBirth }} </span></li>
+                    <li> <span>Weight: &nbsp; {{ actor.weight }} </span></li>
+                    <li> <span>Height: &nbsp; {{ actor.height }} </span></li>
+                    <li> <span>Hair Colour: &nbsp; {{ actor.hairColour }} </span></li>
+                    <li> <span>Eye Colour: &nbsp; {{ actor.eyeColour }} </span></li>
+                    <li> <span>Gender: &nbsp; {{ actor.gender }} </span></li>
+                    <li> <span>Rating: &nbsp; {{ actor.rating }} </span></li>
+                </font>
+                </ul>
+            {% endfor %}
+        {% else %}
+            {% for director in directorDetails %}
+                <ul type="none">
+                <font size="4">
+                    <li><span>First Name: &nbsp; {{ director.user.first_name }}</span></li>
+                    <li> <span>Surname: &nbsp; {{ director.user.last_name }}</span></li>
+                    <li> <span>E-mail: &nbsp; {{ director.user.email }} </span></li>
+                    <li> <span>Agency: &nbsp; {{ director.agency }} </span></li>
+                    <li> <span>Website: &nbsp; {{ director.website }} </span></li>
+                    <li> <span>Phone: &nbsp; {{ director.phone }} </span></li>
+                </font>
+                </ul>
+            {% endfor %}
+        {% endif %}
+
+	    </div>
+	<!-- </div>
+	</div> -->
+
+	
+        <div class="col-md-8">
+
+        {% if actorDetails %}
+
+			<div class="left-header" style="text-align: center;"> <!-- PUT CENTER IN A CLASS!!! -->
+
+				<h1> Available Roles </h1>
+                                <br>
+			<div class="left-reel">
+
+                {% if availableItems %}
+                <ul class ="latest">
+                    {% for role in availableItems %}
+                        <li>
+                            <a href="/extras/production/{{ role.production.url }}/role/{{ role.url }}">
+                                <img src="{{ STATIC_PATH }}/{{ role.picture }}" alt="Role thumbnail" />
+                                <span class="title">{{ role.name }}</span>
+                                <span class="date">{{ role.production.closingDate }}</span>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+
+			</div>
+
+			</div>
+
+        {% else %}
+
+            <div class="left-header" style="text-align: center;"> <!-- PUT CENTER IN A CLASS!!! -->
+
+				<h1> Available Actors </h1>
+                <br>
+			<div class="left-reel">
+
+                {% if availableItems %}
+                <ul class ="latest">
+                    {% for actor in availableItems %}
+                        <li>
+                            <a href="/extras/actor/{{ actor.url }}">
+                                <img src="{{ STATIC_PATH }}/{{ add.picture.here }}" alt="Role thumbnail" />
+                                <span class="title">{{ actor.user.first_name }} {{ actor.user.last_name }}</span>
+                                <span class="date">{{ actor.dateOfBirth }}</span>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+
+			</div>
+
+			</div>
+
+        {% endif %}
+  
+
+	 {% endblock %} 
+      </div>
+	</div>
+		<div id="dialog" title="Register">
+			<p>Would you like to register as an actor, and browse open positions?</p>
+			<p>Or are you a casting director, looking for the latest talent?</p>
+		</div>
+
+
+</body>
+</html>

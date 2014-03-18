@@ -1,0 +1,140 @@
+{% load static %}
+<!DOCTYPE html>
+
+<!-- Template -->
+
+<html>
+
+	<head>
+
+	    <script src="{% static 'js/jquery-1.10.2.js' %}"></script>
+	    <script src="{% static 'js/jquery-ui-1.10.4.custom.js' %}"></script>
+	    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+	
+	    <link href="{% static 'css/bootswatch.css' %}" rel="stylesheet">
+	    <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+
+ 
+        	<title>Extras</title>
+
+		<script>
+		 $(function() {
+
+			// Link to open the dialog
+			$( "#dialog-link" ).click(function( event ) {
+				$( "#dialog" ).dialog( "open" );
+				event.preventDefault();
+			});
+
+
+             $("#view-profile-modal").click(function() {
+                window.location = "/extras/profile/";
+             });
+
+             $("#login-modal").click(function() {
+                 window.location = "/extras/login/";
+             });
+
+
+             $("#logout-modal").click(function() {
+                 window.location = "/extras/logout/";
+             });
+
+             $("#actor-reg-modal").click(function() {
+                 window.location = "/extras/actor_register/";
+             });
+
+             $("#director-reg-modal").click(function() {
+                 window.location = "/extras/director_register/";
+             });
+
+
+		});
+		</script>
+	</head>
+	
+	<body>
+		
+<strong>
+		<div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+		<div class="top-navbar-container">
+			<a href="/extras"><img src="{% static 'logo.png' %}" alt="Logo here!!!" /></a>
+
+			<div class="user-navbar-block col-lg-4" style="padding-right: 0;" data-toggle="collapse">
+
+				{% if user.is_authenticated %}
+
+				<a type="button" class="btn btn-primary" href="/extras/logout/" id="logout-modal"><strong>Logout</strong></a>
+				<a href="/extras/profile/" type="button" class="btn btn-primary" id="view-profile-modal"><strong>My Profile</strong></a>
+
+				{% else %}
+				<a type="button" class="btn btn-primary" href="/extras/login/" id="login-modal"><strong>Login</strong></a>
+				<button class="btn btn-primary" data-toggle="modal" data-target="#regModal" data-backdrop="static" data-show="true"><strong>Register Here</strong></button>
+				{% endif %}
+
+
+			</div>
+		</div>
+
+        <div class="navbar-header">
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav extras-navbar">
+            <li><a href="/extras/">Home</a></li>
+            <li><a href="/extras/actors/">Actors</a></li>
+            <li class="dropdown"><a href="/extras/jobs/">Jobs</a></li>
+            <li class="dropdown"><a href="/extras/about/">About</a></li>
+          </ul>
+
+<form class="navbar-form navbar-right">
+                  
+                  </form>
+
+        </div>
+      </div>
+    </div>
+
+	<div class="container container-main">
+
+
+ {% block body_block %}{% endblock %}
+
+
+      </div>
+	</div>
+		
+
+		<!-- Register Modal -->
+		<div id="regModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h4 class="modal-title" id="myModalLabel">Register</h4>
+		      </div>
+		      <div class="modal-body">
+
+	                 <p>Would you like to register as an actor, and browse open positions?
+	                 <p>Or are you a casting director, looking for the latest talent? 
+	                 
+	                 
+	             </ul>
+
+		      </div>
+		      <div class="modal-footer">
+			<button type="button" class="btn btn-primary" id="actor-reg-modal">Register as Actor</button>
+			<button type="button" class="btn btn-primary" id="director-reg-modal">Register as Director</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+</strong>
+	</body>
+
+</html>
