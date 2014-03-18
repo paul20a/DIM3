@@ -19,8 +19,8 @@ def user_logout(request):
 def message(request):
     actor=Actor.objects.get(user=request.user)
 
-    send_mail('Extras application', 'Application from: '+actor.user.first_name+' '+actor.user.last_name+
-    ' view applicant at'+'http://paul20a.pythonanywhere.com/extras/actor/'+encode_url(actor.user.username), 'from@example.com',
+    send_mail('Extras application', 'Application recieved from: '+actor.user.first_name+' '+actor.user.last_name+
+    ' view applicant at '+'http://paul20a.pythonanywhere.com/extras/actor/'+encode_url(actor.user.username), 'from@example.com',
     ['paul.91@live.co.uk'], fail_silently=False)
     return HttpResponseRedirect('/extras/')
 

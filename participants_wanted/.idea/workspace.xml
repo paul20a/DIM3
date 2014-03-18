@@ -23,10 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/extras/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="99" selection-start="842" selection-end="842" vertical-scroll-proportion="0.444668" vertical-offset="136" max-vertical-offset="6902">
+            <state line="18" column="19" selection-start="692" selection-end="692" vertical-scroll-proportion="164.4" vertical-offset="4416" max-vertical-offset="6902">
               <folding>
                 <element signature="e#0#58#0" expanded="true" />
               </folding>
@@ -74,6 +74,24 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="template.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/extras/template.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="60" selection-start="737" selection-end="737" vertical-scroll-proportion="1.3076923" vertical-offset="527" max-vertical-offset="2533">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/extras/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="120" selection-start="773" selection-end="773" vertical-scroll-proportion="-0.77272725" vertical-offset="714" max-vertical-offset="4386">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="populate_extras.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/populate_extras.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -86,7 +104,7 @@
       <file leaf-file-name="role.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/extras/role.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="106" column="14" selection-start="3758" selection-end="3758" vertical-scroll-proportion="-21.038462" vertical-offset="1255" max-vertical-offset="2057">
+            <state line="106" column="14" selection-start="3758" selection-end="3758" vertical-scroll-proportion="-69.30769" vertical-offset="0" max-vertical-offset="2057">
               <folding />
             </state>
           </provider>
@@ -121,10 +139,10 @@
         <option value="$PROJECT_DIR$/templates/extras/index.html" />
         <option value="$PROJECT_DIR$/templates/extras/send.html" />
         <option value="$PROJECT_DIR$/extras/urls.py" />
-        <option value="$PROJECT_DIR$/templates/extras/template.html" />
         <option value="$PROJECT_DIR$/templates/extras/role.html" />
         <option value="$PROJECT_DIR$/participants_wanted/settings.py" />
         <option value="$PROJECT_DIR$/extras/views.py" />
+        <option value="$PROJECT_DIR$/templates/extras/template.html" />
       </list>
     </option>
   </component>
@@ -625,27 +643,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/extras/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="120" selection-start="773" selection-end="773" vertical-scroll-proportion="22.884615" vertical-offset="952" max-vertical-offset="4386">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/extras/template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="126" column="73" selection-start="3924" selection-end="3924" vertical-scroll-proportion="-19.884615" vertical-offset="1625" max-vertical-offset="2533">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/extras/role.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="106" column="14" selection-start="3758" selection-end="3758" vertical-scroll-proportion="-21.038462" vertical-offset="1255" max-vertical-offset="2057">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/extras/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="9" selection-start="872" selection-end="878" vertical-scroll-proportion="-9.52" vertical-offset="0" max-vertical-offset="1190">
@@ -693,10 +690,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/extras/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="99" selection-start="842" selection-end="842" vertical-scroll-proportion="0.444668" vertical-offset="136" max-vertical-offset="6902">
+        <state line="18" column="19" selection-start="692" selection-end="692" vertical-scroll-proportion="164.4" vertical-offset="4416" max-vertical-offset="6902">
           <folding>
             <element signature="e#0#58#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/extras/role.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="106" column="14" selection-start="3758" selection-end="3758" vertical-scroll-proportion="-69.30769" vertical-offset="0" max-vertical-offset="2057">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/extras/template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="60" selection-start="737" selection-end="737" vertical-scroll-proportion="1.3076923" vertical-offset="527" max-vertical-offset="2533">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/extras/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="120" selection-start="773" selection-end="773" vertical-scroll-proportion="-0.77272725" vertical-offset="714" max-vertical-offset="4386">
+          <folding />
         </state>
       </provider>
     </entry>
