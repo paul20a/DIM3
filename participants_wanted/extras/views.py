@@ -16,6 +16,10 @@ def user_logout(request):
 
     return HttpResponseRedirect('/extras/')
 
+def message(request):
+    email = EmailMessage('Subject', 'Body', t=['paul.91@live.co.uk'])
+    email.send()
+    return HttpResponseRedirect('/extras/')
 
 def decode_url(name_url):
     return name_url.replace('_', ' ')
