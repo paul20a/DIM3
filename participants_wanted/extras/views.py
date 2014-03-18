@@ -17,8 +17,8 @@ def user_logout(request):
     return HttpResponseRedirect('/extras/')
 
 def message(request):
-    send_mail('Extras application', 'Application from.', 'from@example.com',
-    ['to@example.com'], fail_silently=False)
+    send_mail('Extras application', 'Application from.',
+    ['paul.91@live.co.uk'], fail_silently=False)
     return HttpResponseRedirect('/extras/')
 
 def decode_url(name_url):
