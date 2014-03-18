@@ -17,7 +17,7 @@ def user_logout(request):
     return HttpResponseRedirect('/extras/')
 
 def message(request):
-    send_mail('Extras application', 'Application from.',
+    send_mail('Extras application', 'Application from.','paul.91c@goo.co.uk'
     ['paul.91@live.co.uk'], fail_silently=False)
     return HttpResponseRedirect('/extras/')
 
