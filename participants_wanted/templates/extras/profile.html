@@ -191,10 +191,9 @@
                 <ul class ="latest">
                     {% for production in pastCastings %}
                         <li>
-                            <a href="/extras/actor/{{ actor.url }}">
+                            <a href="/extras/production/{{ production.url }}">
                                 <img src="{{ STATIC_PATH }}/{{ production.picture }}" alt="Role thumbnail" />
                                 <span class="title">{{ production.title}}</span>
-                                <span class="genre">{{ production.genre }}</span>
                             </a>
                         </li>
                     {% endfor %}

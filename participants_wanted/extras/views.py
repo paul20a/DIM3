@@ -349,6 +349,7 @@ def profile(request):
         # add the past castings (depending on the user type)
         if context_dict['directorDetails']: # director -> add all productions with the same director
             for production in Production.objects.order_by('-title'):
+                production.url=encode_url(production.name)
                 if production.director.user == rUser:
                     context_dict['pastCastings'].append(production)
         else: # actor -> add all productions for which this actor has successfully applied
