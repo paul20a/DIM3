@@ -23,10 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/extras/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="352" column="38" selection-start="11210" selection-end="11210" vertical-scroll-proportion="-3.82" vertical-offset="5793" max-vertical-offset="6749">
+            <state line="368" column="35" selection-start="12088" selection-end="12088" vertical-scroll-proportion="0.4957627" vertical-offset="6022" max-vertical-offset="6749">
               <folding>
                 <element signature="e#0#58#0" expanded="true" />
               </folding>
@@ -34,10 +34,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profile.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="profile.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/extras/profile.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="196" column="48" selection-start="6633" selection-end="6633" vertical-scroll-proportion="0.40552017" vertical-offset="3141" max-vertical-offset="3859">
+            <state line="196" column="48" selection-start="6633" selection-end="6633" vertical-scroll-proportion="-3.745098" vertical-offset="3141" max-vertical-offset="3859">
               <folding />
             </state>
           </provider>
@@ -58,9 +58,9 @@
         <option value="$PROJECT_DIR$/templates/extras/template.html" />
         <option value="$PROJECT_DIR$/templates/extras/register.html" />
         <option value="$PROJECT_DIR$/extras/forms.py" />
-        <option value="$PROJECT_DIR$/extras/views.py" />
         <option value="$PROJECT_DIR$/templates/extras/role.html" />
         <option value="$PROJECT_DIR$/templates/extras/profile.html" />
+        <option value="$PROJECT_DIR$/extras/views.py" />
       </list>
     </option>
   </component>
@@ -154,6 +154,15 @@
   <component name="PropertiesComponent">
     <property name="recentsLimit" value="5" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="options.lastSelected" value="com.jetbrains.python.configuration.PythonSdkConfigurable" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings />
+    </option>
   </component>
   <component name="RunManager" selected="Django server.participants_wanted">
     <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
@@ -555,19 +564,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/extras/views.py">
+    <entry file="file://$PROJECT_DIR$/templates/extras/profile.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="352" column="38" selection-start="11210" selection-end="11210" vertical-scroll-proportion="-3.82" vertical-offset="5793" max-vertical-offset="6749">
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-          </folding>
+        <state line="196" column="48" selection-start="6633" selection-end="6633" vertical-scroll-proportion="-3.745098" vertical-offset="3141" max-vertical-offset="3859">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/extras/profile.html">
+    <entry file="file://$PROJECT_DIR$/extras/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="196" column="48" selection-start="6633" selection-end="6633" vertical-scroll-proportion="0.40552017" vertical-offset="3141" max-vertical-offset="3859">
-          <folding />
+        <state line="368" column="35" selection-start="12088" selection-end="12088" vertical-scroll-proportion="0.4957627" vertical-offset="6022" max-vertical-offset="6749">
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
