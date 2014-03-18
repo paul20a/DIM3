@@ -34,10 +34,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profile.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="profile.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/extras/profile.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="0" selection-start="55" selection-end="55" vertical-scroll-proportion="0.06854839" vertical-offset="0" max-vertical-offset="1938">
+            <state line="2" column="0" selection-start="55" selection-end="55" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="1938">
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
@@ -64,6 +64,17 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/extras/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="120" selection-start="773" selection-end="773" vertical-scroll-proportion="0.779476" vertical-offset="0" max-vertical-offset="4386">
+              <folding>
+                <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#1;n#body#0;n#strong#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -75,13 +86,13 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/static/css/custom.css" />
-        <option value="$PROJECT_DIR$/templates/extras/index.html" />
         <option value="$PROJECT_DIR$/templates/extras/template.html" />
         <option value="$PROJECT_DIR$/templates/extras/register.html" />
         <option value="$PROJECT_DIR$/extras/forms.py" />
         <option value="$PROJECT_DIR$/templates/extras/role.html" />
         <option value="$PROJECT_DIR$/extras/views.py" />
         <option value="$PROJECT_DIR$/templates/extras/profile.html" />
+        <option value="$PROJECT_DIR$/templates/extras/index.html" />
       </list>
     </option>
   </component>
@@ -483,7 +494,9 @@
     <entry file="file://$PROJECT_DIR$/templates/extras/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="82" column="17" selection-start="3365" selection-end="3365" vertical-scroll-proportion="0.0" vertical-offset="1394" max-vertical-offset="4386">
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#1;n#body#0;n#strong#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -557,13 +570,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/extras/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="17" selection-start="3365" selection-end="3365" vertical-scroll-proportion="0.0" vertical-offset="1394" max-vertical-offset="4386">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/extras/role.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="109" column="8" selection-start="3789" selection-end="3789" vertical-scroll-proportion="0.6572581" vertical-offset="1527" max-vertical-offset="2057">
@@ -596,10 +602,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/extras/profile.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="55" selection-end="55" vertical-scroll-proportion="0.06854839" vertical-offset="0" max-vertical-offset="1938">
+        <state line="2" column="0" selection-start="55" selection-end="55" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="1938">
           <folding>
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/extras/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="120" selection-start="773" selection-end="773" vertical-scroll-proportion="0.779476" vertical-offset="0" max-vertical-offset="4386">
+          <folding>
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#1;n#body#0;n#strong#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

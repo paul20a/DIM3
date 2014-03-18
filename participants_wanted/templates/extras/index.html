@@ -19,7 +19,7 @@
         function sortPopular() {
             $("ul.filtered").html("<ul class =\"filtered\" id=\"productions-list\">" +
                                 "{% for production in productions_popular %}" +
-                                "<li style=\"background: url({% static 'lotr.jpg' %}) 40% 40%;\">" +
+                                 " <li style=\"background: url({{ STATIC_PATH }}/{{ production.picture }}) 40% 40%;\">"+
                                 "<a href=\"/extras/production/{{ production.url }}/\">" +
                                 "<h1>{{ production.title }}</h1>" +
                                 "<span class=\"clapper\">" +
@@ -36,7 +36,7 @@
         function sortClosing() {
             $("ul.filtered").html("<ul class =\"filtered\" id=\"productions-list\">" +
                                 "{% for production in productions_closing %}" +
-                                "<li style=\"background: url({% static 'lotr.jpg' %}) 40% 40%;\">" +
+                                " <li style=\"background: url({{ STATIC_PATH }}/{{ production.picture }}) 40% 40%;\">"+
                                 "<a href=\"/extras/production/{{ production.url }}/\">" +
                                 "<h1>{{ production.title }}</h1>" +
                                 "<span class=\"clapper\">" +
@@ -53,7 +53,7 @@
         function sortHPaid() {
             $("ul.filtered").html("<ul class =\"filtered\" id=\"productions-list\">" +
                                 "{% for production in hpaid %}" +
-                                "<li style=\"background: url({% static 'lotr.jpg' %}) 40% 40%;\">" +
+                                " <li style=\"background: url({{ STATIC_PATH }}/{{ production.picture }}) 40% 40%;\">"+
                                 "<a href=\"/extras/production/{{ production.url }}/\">" +
                                 "<h1>{{ production.title }}</h1>" +
                                 "<span class=\"clapper\">" +
@@ -233,10 +233,10 @@
               </div>
               <div class="modal-body">
 
-                     <p>Would you like to register as an actor, and browse open positions?
-                     <p>Or are you a casting director, looking for the latest talent? 
-                     
-                     
+                     <p>Would you like to register as an actor, and browse open positions?</p>
+                     <p>Or are you a casting director, looking for the latest talent?</p>
+
+
                  </ul>
 
               </div>
