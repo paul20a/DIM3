@@ -96,6 +96,7 @@ def role(request, production_name_url, role_name_url):
 
     try:
         role = Role.objects.get(name = role_name)
+        role.url=encode_url(role_name)
 	context_dict['role']=role	
 	context_dict['picture'] = role.picture
         context_dict['production'] = Production.objects.get(title = production_name)
