@@ -165,7 +165,7 @@
                 <ul class ="latest">
                     {% for role in availableItems %}
                         <li>
-                            <a href="/extras/production/{{ role.production.url }}/role/{{ role.url }}">
+                            <a href="/extras/production/{{ role.purl }}/role/{{ role.url }}">
                                 <img src="{{ STATIC_PATH }}/{{ role.picture }}" alt="Role thumbnail" />
                                 <span class="title">{{ role.name }}</span>
                                 <span class="date">{{ role.production.closingDate }}</span>
@@ -183,18 +183,18 @@
 
             <div class="left-header" style="text-align: center;"> <!-- PUT CENTER IN A CLASS!!! -->
 
-				<h1> Available Actors </h1>
+				<h1>My Productions </h1>
                 <br>
 			<div class="left-reel">
 
-                {% if availableItems %}
+                {% if pastCastings %}
                 <ul class ="latest">
-                    {% for actor in availableItems %}
+                    {% for production in pastCastings %}
                         <li>
                             <a href="/extras/actor/{{ actor.url }}">
-                                <img src="{{ STATIC_PATH }}/{{ actor.picture }}" alt="Role thumbnail" />
-                                <span class="title">{{ actor.user.first_name }} {{ actor.user.last_name }}</span>
-                                <span class="date">{{ actor.dateOfBirth }}</span>
+                                <img src="{{ STATIC_PATH }}/{{ production.picture }}" alt="Role thumbnail" />
+                                <span class="title">{{ production.title}}</span>
+                                <span class="genre">{{ production.genre }}</span>
                             </a>
                         </li>
                     {% endfor %}

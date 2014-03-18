@@ -4,7 +4,7 @@
     <data-source source="LOCAL" name="Django default" uuid="e05c67c1-7b2e-46c8-a821-1f02da39c742">
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/participants_wanted/../extras.db</jdbc-url>
+      <jdbc-url>jdbc:sqlite:C:\Users\Paul\Documents\GitHub\DIM3\participants_wanted\participants_wanted\..\extras.db</jdbc-url>
       <libraries />
     </data-source>
   </component>

@@ -366,6 +366,8 @@ def profile(request):
             context_dict['availableItems'] = Actor.objects.order_by('-dateOfBirth')
         else: # actor -> all roles this actor haven't successfully applied to
             for role in Role.objects.order_by('-name'):
+                role.url=encode(role.name)
+                role.purl=encode(role.production.title)
                 if role not in context_dict['pastCastings']:
                     context_dict['availableItems'].append(role)
     else:
