@@ -147,13 +147,10 @@ def add_production(request):
 
                 production= form.save(commit=False)
                 production.productionID=Production.objects.count()
-                #reintroduce for director inclusion
- 	 #   try:
-              #  director= Director.objects.get(directorID=4321)
-             #   production.director = director
-          #  except Director.DoesNotExist:
 
-            	  #  production.save()
+                director= Director.objects.get(user=request.user)
+                production.director = director
+         
                 production.save()
                 return index(request)
             else:
