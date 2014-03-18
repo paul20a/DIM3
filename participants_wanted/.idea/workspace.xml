@@ -26,7 +26,7 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/extras/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="25" selection-start="891" selection-end="891" vertical-scroll-proportion="0.60504204" vertical-offset="103" max-vertical-offset="6851">
+            <state line="22" column="106" selection-start="951" selection-end="951" vertical-scroll-proportion="0.5" vertical-offset="136" max-vertical-offset="6902">
               <folding>
                 <element signature="e#0#58#0" expanded="true" />
               </folding>
@@ -64,6 +64,15 @@
                 <marker date="1395114038034" expanded="true" signature="28:56" placeholder="..." />
                 <marker date="1395114038034" expanded="true" signature="63:72" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/extras/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="9" selection-start="872" selection-end="878" vertical-scroll-proportion="12.24" vertical-offset="544" max-vertical-offset="1190">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -655,13 +664,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/extras/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="9" selection-start="872" selection-end="878" vertical-scroll-proportion="17.0" vertical-offset="663" max-vertical-offset="1190">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/extras/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="120" selection-start="773" selection-end="773" vertical-scroll-proportion="22.884615" vertical-offset="952" max-vertical-offset="4386">
@@ -707,9 +709,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/extras/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="9" selection-start="872" selection-end="878" vertical-scroll-proportion="12.24" vertical-offset="544" max-vertical-offset="1190">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/extras/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="25" selection-start="891" selection-end="891" vertical-scroll-proportion="0.60504204" vertical-offset="103" max-vertical-offset="6851">
+        <state line="22" column="106" selection-start="951" selection-end="951" vertical-scroll-proportion="0.5" vertical-offset="136" max-vertical-offset="6902">
           <folding>
             <element signature="e#0#58#0" expanded="true" />
           </folding>
