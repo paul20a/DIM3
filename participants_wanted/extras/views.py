@@ -7,6 +7,7 @@ from django.contrib.auth import authenticate, login,logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from extras.bing_search import run_query
+from django.core.mail import send_mail
 
 @login_required
 def user_logout(request):
@@ -354,7 +355,7 @@ def profile(request):
                     context_dict['pastCastings'].append(production)
         else: # actor -> add all productions for which this actor has successfully applied
 		for ap in Application.objects.order_by('-date'):
-			if (ap.actor.user == rUser):
+			if ap.actor.user == rUser:
 				context_dict['currentCasts'].append(ap)
 
 		for cast in context_dict['currentCasts']:
