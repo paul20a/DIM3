@@ -17,4 +17,4 @@ urlpatterns = patterns('',
 	url(r'^login/$', views.user_login, name='login'),
 	url(r'^logout/$', views.user_logout, name='logout'),
 	url(r'^search/$', views.search, name='search'),
-    url(r'^send/(?P<role_name_url>\w+)$', views.message, name='send'),)
+    url(r'^send/$', views.message, name='send'),)
