@@ -12,6 +12,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'paul.91c@googlemail.com'
 EMAIL_HOST_PASSWORD = 'neb2xih2'
 EMAIL_PORT = 587
+DEBUG_TEMPLATE = True
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
