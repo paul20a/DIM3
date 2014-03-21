@@ -15,9 +15,9 @@ def populate():
     new_director_user6 = add_user('baz','Baz','Luhrman','baz@musicfilms.com','1',True)
 
     # Actors
-    new_actor1 = add_actor(new_actor_user1,'USA','1986-12-18','180','152','brown','brown','male','4.2')
-    new_actor2 = add_actor(new_actor_user2,'USA','1986-12-18','180','152','brown','brown','male','4.2')
-    new_actor3 = add_actor(new_actor_user3,'USA','1986-12-18','180','152','brown','brown','male','4.2')
+    new_actor1 = add_actor(new_actor_user1,'USA','1986-12-18','180','152','brown','brown','Male','4.2','static/cage.jpg')
+    new_actor2 = add_actor(new_actor_user2,'USA','1986-12-18','180','152','brown','brown','Male','4.2','static/jnr.jpg')
+    new_actor3 = add_actor(new_actor_user3,'USA','1986-12-18','180','152','brown','brown','Male','4.2','static/brad.jpg')
     
     # Directors
     new_director1 = add_director(new_director_user1,'Hollywood','www.jaws.com','07701445267')
@@ -28,24 +28,24 @@ def populate():
     new_director6 = add_director(new_director_user6,'Hollywood','www.musicfilms.com','7686665789')
 
     # Productions
-    new_production1 = add_production('1234',new_director1,'Avatar 2','Sequel to the sucky Avatar','Fantasy','2014-03-23','2014-03-24','8000000')
-    new_production2 = add_production('1235',new_director2,'Prometheus Returns','Sequel to Prometheus','Sci-Fi','2014-03-23','2014-03-24','65000')
-    new_production3 = add_production('1236',new_director3,'The Hobbit 3','Third part of The Hobbit ','Fantasy','2014-03-23','2014-03-24','80000')
-    new_production4 = add_production('1237',new_director4,'Star Wars VII','Sequel to Star Wars','Sci-Fi','2014-03-17','2014-05-10','1000000')
-    new_production5 = add_production('1238',new_director5,'Terminator: Genesis','Sequel to Terminator','Sci-Fi','2014-03-20','2014-04-20','75000')
-    new_production6 = add_production('1239',new_director6,'Moulin Rouge','Romantic musical','Drama/Romance/Musical','2014-03-25','2014-05-24','30000')
-    new_production7 = add_production('1240',new_director6,'The Great Gatsby','Remake of The Great Gatsby','Drama/Romance','2014-06-10','2014-07-10','60000')
-    new_production8 = add_production('1241',new_director6,'Mamma Mia','Remake of the famous musical','Comedy/Romance/Musical','2014-06-10','2014-07-10','25000')
+    new_production1 = add_production('1234',new_director1,'Avatar 2','Sequel to the sucky Avatar','Fantasy','2014-03-23','2014-03-24','8000000','static/a.jpg')
+    new_production2 = add_production('1235',new_director2,'Prometheus Returns','Sequel to Prometheus','Sci-Fi','2014-03-23','2014-03-24','65000','static/prometheus.jpg')
+    new_production3 = add_production('1236',new_director3,'The Hobbit 3','Third part of The Hobbit ','Fantasy','2014-03-23','2014-03-24','80000','static/lotr_3.jpg')
+    new_production4 = add_production('1237',new_director4,'Star Wars VII','Sequel to Star Wars','Sci-Fi','2014-03-17','2014-05-10','1000000','static/starwars.jpg')
+    new_production5 = add_production('1238',new_director5,'Terminator: Genesis','Sequel to Terminator','Sci-Fi','2014-03-20','2014-04-20','75000','static/terminatrop.jpg')
+    new_production6 = add_production('1239',new_director6,'Moulin Rouge','Romantic musical','Drama/Romance/Musical','2014-03-25','2014-05-24','30000','static/Moulin-Rouge.jpg')
+    new_production7 = add_production('1240',new_director6,'The Great Gatsby','Remake of The Great Gatsby','Drama/Romance','2014-06-10','2014-07-10','60000','static/gatsby.jpg')
+    new_production8 = add_production('1241',new_director6,'Mamma Mia','Remake of the famous musical','Comedy/Romance/Musical','2014-06-10','2014-07-10','25000','static/mammamia.jpg')
 
     # Role
-    new_role1 = add_role(new_production1,'Male','Actor','Tail love','Umbeeba')
-    new_role2 = add_role(new_production2,'Male','Actor','Alien killer, Male version of Ripley','Rips')
-    new_role3 = add_role(new_production3,'Female','Actor','Female dwarf?','Wendy')
-    new_role4 = add_role(new_production4,'Male','Actor', 'Handsome male actor, good at martial arts', 'Jedi')
-    new_role5 = add_role(new_production4,'Male','Dwarf', 'Male dwarf to play the part of an ewok', 'Ewok')
-    new_role6 = add_role(new_production4,'Male/Female','Actor', 'Must run fast', 'Stormtrooper')
-    new_role7 = add_role(new_production5,'Female','Actor','Female aged 18 to 30 good looking and attractive.','Female Terminator')
-    new_role8 = add_role(new_production8,'Female','Singer','Wanted female actor/singer - playing age - twenties/early thirties (younger looks are the important factor rather than age).  good singing voice is essential coupled with competent acting skills.','Mamma Mia Role')
+    new_role1 = add_role(new_production1,'Male','Actor','Tail love','Umbeeba','6500.00','static/avatar_3.jpg','New Zealand')
+    new_role2 = add_role(new_production2,'Male','Actor','Alien killer, Male version of Ripley','Rips','6500.00','static/ripley.png','USA')
+    new_role3 = add_role(new_production3,'Male','Actor','Female dwarf?','Wendy','200.00','static/dwarf.jpeg','New Zealand')
+    new_role4 = add_role(new_production4,'Male','Actor', 'Handsome male actor, good at martial arts', 'Jedi','500.00','static/jedi.jpg','Morocco')
+    new_role5 = add_role(new_production4,'Male','Dwarf', 'Male dwarf to play the part of an ewok', 'Ewok','500.00','static/ewok.ico','USA')
+    new_role6 = add_role(new_production4,'Male','Actor', 'Must run fast', 'Stormtrooper','650.00','static/storm.png','USA')
+    new_role7 = add_role(new_production5,'Female','Actor','Female aged 18 to 30 good looking and attractive.','Female Terminator','6500.00','static/terminator.jpg','USA')
+    new_role8 = add_role(new_production8,'Female','Singer','Wanted female actor/singer - playing age - twenties/early thirties (younger looks are the important factor rather than age).  good singing voice is essential coupled with competent acting skills.','Mamma Mia Role','6500.00','static/mamma.jpeg','Greece')
     
 
 
@@ -61,10 +61,10 @@ def add_user(username,fname,lname,email,password,is_staff):
     u.save()
     return u
 
-def add_actor(user,country,dob,weight,height,hColour,eColour,gender,rating):
+def add_actor(user,country,dob,weight,height,hColour,eColour,gender,rating,picture):
     #u = add_user(username,fname,lname,email,password)
     a = Actor.objects.get_or_create(user=user,country=country,
-        dateOfBirth=dob,weight=weight,height=height,hairColour=hColour,eyeColour=eColour,gender=gender,rating=rating)[0]
+        dateOfBirth=dob,weight=weight,height=height,hairColour=hColour,eyeColour=eColour,gender=gender,rating=rating,picture=picture)[0]
     return a
 
 def add_director(user,agency,website,phone):
@@ -73,12 +73,12 @@ def add_director(user,agency,website,phone):
     return d
 
 
-def add_production(pID,director,title,description,genre,openingDate,closingDate,cost):
-    p = Production.objects.get_or_create(productionID=pID,director=director,title=title,description=description,genre=genre,openingDate=openingDate,closingDate=closingDate,cost=cost)[0]
+def add_production(pID, director,title, description, genre, openingDate, closingDate, cost, picture):
+    p = Production.objects.get_or_create(productionID=pID,director=director,title=title,description=description,genre=genre,openingDate=openingDate,closingDate=closingDate,cost=cost,picture=picture)[0]
     return p
 
-def add_role(production,gender,roleType,description,name):
-    r = Role.objects.get_or_create(production=production,gender=gender,roleType=roleType,description=description,name=name)[0]
+def add_role(production,gender,roleType,description,name,pay,picture,country):
+    r = Role.objects.get_or_create(production=production,gender=gender,roleType=roleType,description=description,name=name,pay=pay,picture=picture,country=country)[0]
     return r
 
 def add_application(role,actor,date,outcome):

@@ -29,6 +29,14 @@
                 </font>
                 </ul>
             {% endfor %}
+            <h1>My Applications</h1>
+            {% for app in currentCasts %}
+                <ul type="none">
+                <font size="4">
+                    <li><span><a href=" /extras/production/{{ app.purl }}/role/{{ app.rurl }}/send/">{{ app.role.name }}</a></span></li>
+                </font>
+                </ul>
+            {% endfor %}
         {% else %}
             {% for director in directorDetails %}
                 <ul type="none">
@@ -49,7 +57,7 @@
 	<!-- </div>
 	</div> -->
 
-	
+
         <div class="col-md-8">
 
         {% if actorDetails %}
@@ -72,6 +80,8 @@
                         </li>
                     {% endfor %}
                 </ul>
+                {% else %}
+                <ul class ="latest">Sorry no casts match your gender and location</ul>
                 {% endif %}
 
 			</div>
@@ -104,6 +114,6 @@
 			</div>
 
         {% endif %}
-  
-
-	 {% endblock %} 
+     </div>
+</div>
+	 {% endblock %}

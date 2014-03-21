@@ -7,7 +7,8 @@ from django.contrib.auth import authenticate, login,logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from extras.bing_search import run_query
-from django.core.mail import send_mail
+from datetime import datetime
+
 
 @login_required
 def user_logout(request):
@@ -16,13 +17,70 @@ def user_logout(request):
 
     return HttpResponseRedirect('/extras/')
 
-def message(request):
-    actor=Actor.objects.get(user=request.user)
+def accept(request, production_name_url, role_name_url,username):
+    context = RequestContext(request)
+    actor=Actor.objects.get(user=User.objects.get(username=username))
+    role_name=decode_url(role_name_url)
+    pro_name=decode_url(production_name_url)
+    pro=Production.objects.get(title=pro_name)
+    a=Application.objects.get(role=Role.objects.get(name=role_name,production=pro),actor=actor)
+    a.outcome='accepted'
+    a.save()
+    return HttpResponseRedirect('/extras/production/'+production_name_url+'/role/'+role_name_url+'/view_application/', context)
 
-    send_mail('Extras application', 'Application recieved from: '+actor.user.first_name+' '+actor.user.last_name+
-    ' view applicant at '+'http://paul20a.pythonanywhere.com/extras/actor/'+encode_url(actor.user.username), 'from@example.com',
-    ['paul.91@live.co.uk'], fail_silently=False)
-    return HttpResponseRedirect('/extras/')
+def decline(request, production_name_url, role_name_url,username):
+    context = RequestContext(request)
+    actor=Actor.objects.get(user=User.objects.get(username=username))
+    role_name=decode_url(role_name_url)
+    pro_name=decode_url(production_name_url)
+    pro=Production.objects.get(title=pro_name)
+    a=Application.objects.get(role=Role.objects.get(name=role_name,production=pro),actor=actor)
+    a.outcome='declined'
+    a.save()
+    return HttpResponseRedirect('/extras/production/'+production_name_url+'/role/'+role_name_url+'/view_application/', context)
+
+def view_application(request, production_name_url, role_name_url):
+    context = RequestContext(request)
+    if request.user.is_staff:
+        production_name=decode_url(production_name_url)
+        role_name=decode_url(role_name_url)
+        role=Role.objects.get(name=role_name, production=Production.objects.get(title=production_name))
+
+        apps=Application.objects.filter(role=role, outcome='undecided')
+        for app in apps:
+            app.url=encode_url(app.actor.user.username)
+
+        context_dict = {'apps': apps}
+        context_dict['role'] = role
+        context_dict['role_url'] = role_name_url
+        context_dict['pro_url'] = production_name_url
+    if request.method == 'POST':
+        print "post:"
+        if 'accept' in request.POST:
+            print "accept:"
+        if 'decline' in request.POST:
+           print "decline:"
+
+
+    return render_to_response('extras/view_application.html', context_dict, context)
+
+
+def message(request, production_name_url, role_name_url):
+    context = RequestContext(request)
+    actor=Actor.objects.get(user=request.user)
+    production_name=decode_url(production_name_url)
+    role_name=decode_url(role_name_url)
+    role=Role.objects.get(name=role_name,production=Production.objects.get( title = production_name))
+    try:
+        app=Application.objects.get(role=role,actor=actor)
+    except Application.DoesNotExist:
+       text='undecided'
+       app=Application.objects.create(role=role,actor=actor, outcome=text, date=datetime.now().date())
+    context_dict = {'app': app}
+    context_dict['production_name_url'] = production_name_url
+    context_dict['role_name_url'] = role_name_url
+    return render_to_response('extras/send.html', context_dict, context)
+
 
 def decode_url(name_url):
     return name_url.replace('_', ' ')
@@ -97,8 +155,8 @@ def role(request, production_name_url, role_name_url):
     try:
         role = Role.objects.get(name = role_name)
         role.url=encode_url(role_name)
-	context_dict['role']=role	
-	context_dict['picture'] = role.picture
+        context_dict['role']=role
+        context_dict['picture'] = role.picture
         context_dict['production'] = Production.objects.get(title = production_name)
     except Role.DoesNotExist:
         pass
@@ -259,7 +317,7 @@ def actorRegister(request):
             profile = profile_form.save(commit=False)
             profile.user = user
 
-	    # Ideally picture upload for questionnaire form
+        # Ideally picture upload for questionnaire form
 
             if 'picture' in request.FILES:
                 profile.picture = request.FILES['picture']
@@ -348,40 +406,41 @@ def profile(request):
         # add the user details
         rUser = request.user
         context_dict = {'userID': User.objects.order_by('-first_name')}
-        context_dict['actorDetails'] = Actor.objects.filter(user = rUser)
-        context_dict['directorDetails'] = Director.objects.filter(user = rUser)
+        context_dict['actorDetails'] = Actor.objects.filter(user=rUser)
+        context_dict['directorDetails'] = Director.objects.filter(user=rUser)
         context_dict['pastCastings'] = []
-	context_dict['currentCasts'] = []
-        # add the past castings (depending on the user type)
-        if context_dict['directorDetails']: # director -> add all productions with the same director
+        context_dict['currentCasts'] = []
+     # add the past castings (depending on the user type)
+        if context_dict['directorDetails']:  # director -> add all productions with the same director
             for production in Production.objects.order_by('-title'):
                 production.url=encode_url(production.title)
                 if production.director.user == rUser:
                     context_dict['pastCastings'].append(production)
-        else: # actor -> add all productions for which this actor has successfully applied
-		for ap in Application.objects.order_by('-date'):
-			if ap.actor.user == rUser:
-				context_dict['currentCasts'].append(ap)
+        else:  # actor -> add all productions for which this actor has successfully applied
+            actor = Actor.objects.get(user=rUser)
+            roles =[]
+            for ap in Application.objects.order_by('-date'):
+                if ap.actor.user == rUser:
+                    ap.rurl=encode_url(ap.role.name)
+                    ap.purl=encode_url(ap.role.production.title)
+                    context_dict['currentCasts'].append(ap)
+                    roles.append(ap.role)
 
-		for cast in context_dict['currentCasts']:
-			cast.url = encode_url(cast.role.name)
-			cast.purl = encode_url(cast.role.production.title)
+            for cast in context_dict['currentCasts']:
+                cast.url = encode_url(cast.role.name)
+                cast.purl = encode_url(cast.role.production.title)
 
         # add the available items (actors or roles) that are used for the list on the right side of the template
-        context_dict['availableItems'] = []
-        if context_dict['directorDetails']: # director -> all available actors
-            context_dict['availableItems'] = Actor.objects.order_by('-dateOfBirth')
-        else: # actor -> all roles this actor haven't successfully applied to
-            for role in Role.objects.order_by('-name'):
-                role.url=encode_url(role.name)
-                role.purl=encode_url(role.production.title)
-                if role not in context_dict['pastCastings']:
+            context_dict['availableItems'] = []
+
+            possible_roles= Role.objects.filter(gender=actor.gender,country =actor.country)
+            for role in possible_roles.order_by('-name'):
+                role.url = encode_url(role.name)
+                role.purl = encode_url(role.production.title)
+                if role not in roles:
                     context_dict['availableItems'].append(role)
     else:
-        context_dict = {}
-
-    
-
+        context_dict={}
     return render_to_response('extras/profile.html', context_dict, context)
 
 def search(request):

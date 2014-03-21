@@ -1,9 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
+{% extends "extras/template.html" %}
+{% block body_block %}
 
-</body>
-</html>
+    <div><h1>Application</h1></div>
+<div>
+
+                <ul type="none">
+                <font size="4">
+                    <li><span>First Name  : &nbsp; {{ app.actor.user.first_name }}</span></li>
+                    <li> <span>Surname    : &nbsp; {{ app.actor.user.last_name }}</span></li>
+                    <li> <span>E-mail     : &nbsp; {{ app.actor.user.email }} </span></li>
+                    <li> <span>Role Name  : &nbsp; {{ app.role.name }} </span></li>
+                    <li> <span>Production : &nbsp; {{ app.role.production.title }} </span></li>
+                    <li> <span>Date       : &nbsp; {{ app.date }} </span></li>
+                    <li> <span>Outcome    : &nbsp; {{ app.outcome }} </span></li>
+
+                </font>
+                </ul>
+
+</div>
+{% endblock %}

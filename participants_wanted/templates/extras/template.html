@@ -27,7 +27,10 @@
 			});
 
             $("#apply-modal").click(function() {
-                 window.location = "/extras/send/";
+                 window.location = "/extras/production/{{ production_name_url }}/role/{{ role.url }}/send/";
+             });
+                 $("#accept-modal").click(function() {
+                 window.location = "/extras/production/{{ production_name_url }}/role/{{ role.url }}/view/";
              });
              $("#view-profile-modal").click(function() {
                 window.location = "/extras/profile/";

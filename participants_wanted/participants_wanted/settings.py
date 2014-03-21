@@ -7,12 +7,7 @@ PROJECT_PATH = os.path.abspath(PROJECT_PATH)
 TEMPLATE_PATH = os.path.join(PROJECT_PATH, 'templates')
 STATIC_PATH = os.path.join(PROJECT_PATH,'static')
 DATABASE_PATH = os.path.join(PROJECT_PATH, 'extras.db')
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'paul.91c@googlemail.com'
-EMAIL_HOST_PASSWORD = ''
-EMAIL_PORT = 587
-DEBUG_TEMPLATE = True
+DEBUG=True
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
